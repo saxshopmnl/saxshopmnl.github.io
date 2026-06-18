@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Sax Shop - Global Theme & Foundation
+   ========================================================================== */
+
+/* 1. CSS Variables (Theming Engine) */
+:root {
+    /* Color Palette - Premium Dark Theme */
+    --bg-dark: #0f1115;          /* Deep Onyx background */
+    --bg-card: #1a1d24;          /* Slightly lighter for panels/cards */
+    --bg-surface: #22262e;       /* Hover states and floating elements */
+    
+    /* Accents - Brass & Gold */
+    --accent-gold: #d4af37;
+    --accent-gold-hover: #b5952f;
+    --accent-highlight: rgba(212, 175, 55, 0.15); /* For subtle hover backgrounds */
+    
+    /* Status Colors (For POS & Stock) */
+    --status-success: #2ecc71;   /* In Stock / Auth Valid */
+    --status-danger: #e74c3c;    /* Out of Stock / Error */
+    
+    /* Typography Colors */
+    --text-main: #f5f5f5;        /* Primary reading text */
+    --text-muted: #a0aab5;       /* Secondary descriptions */
+    --text-dark: #111111;        /* Dark text for gold buttons/badges */
+    
+    /* Spacing & Layout */
+    --container-max: 1400px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.3s ease-in-out;
+}
+
+/* 2. Global Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean body text */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Global Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Premium serif for headings */
+    font-weight: 500;
+    margin-top: 0;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--accent-gold-hover);
+}
+
+/* 4. Global UI Components (Buttons & Badges) */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--accent-gold);
+    color: var(--text-dark) !important; /* Force dark text for contrast */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold-hover);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.5px;
+}
+
+.badge-stock {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: var(--status-success);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.badge-out {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: var(--status-danger);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+/* 5. Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Scrollbar Styling for a polished feel */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-surface);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

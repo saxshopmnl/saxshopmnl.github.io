@@ -1,0 +1,156 @@
+/* ==========================================================================
+   landing.css - Premium Aesthetics & Layout
+   ========================================================================== */
+
+/* 1. Premium Header & Layout Fixes */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.logo h1 {
+    margin: 0;
+    color: var(--accent-gold);
+    font-size: 1.8rem;
+}
+
+.primary-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.primary-nav a:hover {
+    color: var(--accent-gold);
+}
+
+/* 2. Enhanced Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-card);
+    min-width: 220px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    z-index: 200;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: block; /* Ensures links stack neatly inside dropdown */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+}
+
+/* 3. Hero Showcase */
+.hero-showcase {
+    height: 85vh;
+    /* Uses a dark gradient to ensure text is readable even without an image */
+    background-image: linear-gradient(to right, rgba(15,17,21,0.95) 0%, rgba(15,17,21,0.4) 100%), url('../assets/images/hero-bg.jpg');
+    background-color: #111; /* Fallback color */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-text { max-width: 600px; }
+.hero-text h2 { font-size: 4rem; margin-bottom: 10px; color: white; }
+.hero-text p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; }
+.hero-buttons { display: flex; gap: 20px; }
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark) !important;
+}
+
+.btn-gold:hover {
+    background-color: var(--accent-gold-hover);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* 4. Roster Section */
+.roster-section { padding: 100px 10%; background: var(--bg-dark); }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px; }
+.section-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.roster-card {
+    background: var(--bg-card);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.roster-card:hover { transform: translateY(-10px); border-color: rgba(212, 175, 55, 0.3); }
+.card-img-placeholder { height: 350px; background-size: cover; background-position: center; background-color: #2a2d35; }
+.card-info { padding: 30px; }
+.card-info h3 { margin: 0 0 5px 0; color: white; font-size: 1.5rem; }
+.card-info .role { color: var(--accent-gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 15px; }
+.card-info p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+
+/* 5. Reviews Split Section */
+.reviews-section { padding: 100px 10%; background: var(--bg-card); }
+.review-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.column-title { color: var(--accent-gold); font-size: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 30px; }
+.testimonial { margin-bottom: 40px; }
+.quote { font-size: 1.1rem; font-style: italic; color: var(--text-main); line-height: 1.8; margin-bottom: 15px; }
+.quote::before { content: '"'; color: var(--accent-gold); font-size: 1.5rem; margin-right: 5px; }
+.author { color: var(--text-muted); font-weight: bold; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+
+/* 6. Footer */
+.grand-footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #0a0b0e;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+.grand-footer h2 { color: var(--accent-gold); margin-bottom: 5px; }
+.grand-footer p { color: var(--text-muted); }

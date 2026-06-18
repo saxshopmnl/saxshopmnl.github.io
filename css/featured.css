@@ -1,0 +1,118 @@
+/* ==========================================================================
+   featured.css - The Dedicated Spotlight Page
+   ========================================================================== */
+
+/* Lock the body to exactly the height of the screen */
+.featured-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents scrolling so it feels like a presentation */
+}
+
+/* Make sure the header matches the landing page */
+.main-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.spotlight-fullscreen {
+    flex: 1; /* Takes up the remaining height under the header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+    position: relative;
+}
+
+/* Subtle background glow behind the featured instrument */
+.spotlight-fullscreen::before {
+    content: '';
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.spotlight-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 1; /* Keeps text above the glow */
+}
+
+.spotlight-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--accent-gold);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    margin-bottom: 20px;
+}
+
+.spotlight-content h2 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.spotlight-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.spotlight-content h3 {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.spotlight-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.btn-admin {
+    background-color: var(--status-success);
+    color: #111 !important;
+}
+
+.spotlight-visual {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+
+.spotlight-visual img {
+    max-width: 100%;
+    height: auto;
+    max-height: 75vh;
+    filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.6));
+    transition: transform var(--transition-smooth);
+}
+
+.spotlight-visual img:hover {
+    transform: translateY(-10px); /* Gentle float effect on hover */
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog | Sax Shop</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/pos.css" id="pos-stylesheet" disabled>
+</head>
+<body class="newspaper-layout">
+
+    <header class="catalog-header">
+        <div class="logo"><a href="index.html">Sax Shop</a></div>
+        <div class="search-bar">
+            <input type="text" id="global-search" placeholder="Search instruments, reeds, sheet music...">
+        </div>
+        <div id="admin-indicator" class="status-dot"></div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside class="sidebar-filters">
+            <h3>Categories</h3>
+            <ul id="category-list">
+                <li><input type="checkbox" id="cat-inst"> <label for="cat-inst">Instruments</label></li>
+                <li><input type="checkbox" id="cat-acc"> <label for="cat-acc">Accessories</label></li>
+                <li><input type="checkbox" id="cat-sheet"> <label for="cat-sheet">Sheet Music</label></li>
+                <li><input type="checkbox" id="cat-track"> <label for="cat-sheet">Backing Track</label></li>
+            </ul>
+            <h3>Price Range</h3>
+            <input type="range" min="0" max="5000" id="price-slider">
+            
+            <div id="pos-sidebar-controls" class="hidden">
+                <button id="btn-view-register">View Cash Register</button>
+            </div>
+        </aside>
+
+        <main class="main-content-wrapper">
+            
+            <section id="featured-spotlight" class="spotlight-banner">
+                <div class="spotlight-info">
+                    <span class="badge">Featured Instrument</span>
+                    <h2 id="spotlight-title">Yamaha Custom Z Alto Saxophone</h2>
+                    <p id="spotlight-desc">Designed for the modern professional. Offers exceptional tonal flexibility and a lightning-fast key response.</p>
+                    <h3 id="spotlight-price">$4,800.00</h3>
+                    <div class="spotlight-actions">
+                        <button class="btn-primary">View Specifications</button>
+                        <button class="btn-admin hidden">Quick Add to POS</button>
+                    </div>
+                </div>
+                <div class="spotlight-image">
+                    <img id="spotlight-img" src="assets/images/featured-sax.jpg" alt="Featured Saxophone">
+                </div>
+            </section>
+
+            <div class="catalog-header-text">
+                <h3>All Inventory</h3>
+            </div>
+            <section class="catalog-grid" id="product-grid">
+                </section>
+
+        </main>
+
+        <aside class="product-info-pane" id="info-pane">
+            <div id="public-info">
+                <h2>Select an item</h2>
+                <p>Click on any product to view details, specifications, and high-res images.</p>
+            </div>
+            
+            <div id="pos-cart-pane" class="hidden">
+                <h2>Current Order</h2>
+                <ul id="cart-items"></ul>
+                <h3>Total: <span id="cart-total">$0.00</span></h3>
+                <button id="btn-checkout">Complete Offline Sale</button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/render.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
