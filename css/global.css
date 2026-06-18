@@ -173,3 +173,84 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-muted);
 }
+
+/* ==========================================================================
+   Global Header Navigation (Applies to all pages)
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ==========================================================================
+   Logo Overlap / Breakout Effect
+   ========================================================================== */
+
+.logo {
+    position: relative;
+    width: 150px; /* Reserves horizontal space in the flexbox so nav links don't shift */
+    height: 30px; /* Forces the header to stay thin */
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    position: absolute;
+    top: -25px; /* Pulls the image up, allowing the bottom to hang over the header edge */
+    left: 0;
+    width: 160px; /* Makes the logo large enough to read */
+    height: auto;
+    z-index: 200; /* Ensures it stays above the page content when scrolling */
+    
+    /* Adds a soft backlight so the black text is readable on the dark header */
+    filter: drop-shadow(0px 2px 12px rgba(255, 255, 255, 0.8)); 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(2);
+    filter: drop-shadow(0px 4px 15px rgba(255, 255, 255, 1)); /* Glows gold on hover */
+}
+
+/* Ensure the old text is completely hidden if you accidentally left it in the HTML */
+.logo h1 {
+    display: none !important; 
+}
+
+.primary-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Highlights the link if hovered OR if it is the active page */
+.primary-nav a:hover, 
+.primary-nav a[active="true"] {
+    color: var(--accent-gold);
+}
+
+
+
+
+
+
